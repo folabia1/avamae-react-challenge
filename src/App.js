@@ -1,6 +1,6 @@
 import './App.css';
 
-import React, { createContext, useEffect, useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import { Home } from './pages/Home';
@@ -13,15 +13,13 @@ import companyLogo from "./media/Logo.svg";
 
 
 function App() {
-  const [ user, setUser ] = useState(null);
-
   return (
     <Router>
       
         <div className="App">
 
             <header>
-              <Link to="/"><img id="logo" src={companyLogo} /></Link>
+              <Link to="/"><img id="logo" src={companyLogo} alt="logo"/></Link>
               <nav className="navLinks">
                 <Link className="navLink" to="/">Home</Link>
                 <Link className="navLink" to="/about-us">About Us</Link>
