@@ -1,6 +1,7 @@
 .App {
   text-align: left;
   color: black;
+  /* overflow-x: hidden; */
 }  
 
 #logo {
@@ -30,11 +31,17 @@ header {
 .heroSection {
   display: flex;
   flex-direction: column;
-  padding: 0 10%;
-  background-color: grey;
-}  
+  /* padding: 0 10%; */
+  background-color: lightgray;
+  /* height: 250px; */
+}
 
-.heroText {
+.heroSlide {
+  padding: 0 10vw;
+  background-image: url("./media/shutterstock_407632243.jpg");
+}
+
+/* .heroText {
   margin: 0 0 0 100px;
 }  
 
@@ -46,13 +53,34 @@ header {
 
 .heroContent button {
   height: 40px;
-}  
-/* .leftArrow {
+}  */
 
-}   */
+.leftArrow {
+
+} 
 
 .rightArrow {
   transform: rotate(180deg);
 }  
 
 
+.section2 {
+  padding: 50px 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+}
+
+.section2 img {
+  width: 100%;
+}
+
+.section3 {
+  background-image: url("./media/shutterstock_1302552622.jpg");
+}
+
+.section3 .textbox {
+  margin: 0 10%;
+  width: 40%;
+  background-color: rgba(0,0,0,0.4);
+}
