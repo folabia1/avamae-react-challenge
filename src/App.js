@@ -1,10 +1,15 @@
 import './App.css';
+
 import React, { createContext, useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 
 import { Home } from './pages/Home';
 import { AboutUs } from './pages/AboutUs';
 import { ContactUs } from './pages/ContactUs';
+
+import { ContactUsButton } from "./components/ContactUsButton";
+import { LearnMoreButton } from "./components/LearnMoreButton";
+import { LoginButton } from "./components/LoginButton";
 
 import arrowIcon from "./media/Icon_Arrow.svg";
 import submitIcon from "./media/Icon_Submit.svg";
@@ -26,17 +31,16 @@ function App() {
     <Router>
       
         <div className="App">
-          <UserContext.Provider value={{user, setUser}}>
 
-            <nav className="navbar">
-              <Link className="navLink" to="/"><img src={companyLogo} id="title" /></Link>
+            <header>
+              <Link className="navLink" to="/"><img id="logo" src={companyLogo} /></Link>
               <nav className="navLinks">
                 <Link className="navLink" to="/">Home</Link>
                 <Link className="navLink" to="/about-us">About Us</Link>
                 <Link className="navLink" to="/contact-us">Contact Us</Link>
-                <button>Log in</button>
+                <LoginButton />
               </nav>
-            </nav>
+            </header>
 
             <main>
               <Routes>
@@ -46,8 +50,9 @@ function App() {
               </Routes>
             </main>
 
-          </UserContext.Provider>
-
+            <footer>
+              <p>Website Devlopment by <a href="www.avamae.co.uk">AVAMAE</a></p>
+            </footer>
         </div>
       
     </Router>
