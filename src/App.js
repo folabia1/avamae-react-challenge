@@ -19,7 +19,7 @@ function App() {
         <div className="App">
 
             <header>
-              <Link to="/"><img id="logo" src={companyLogo} alt="logo"/></Link>
+              <img id="logo" src={companyLogo} alt="logo"/>
               <nav className="navLinks">
                 <Link className="navLink" to="/">Home</Link>
                 <Link className="navLink" to="/about-us">About Us</Link>

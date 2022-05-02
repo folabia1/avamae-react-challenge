@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import submitIcon from "../media/Icon_Submit.svg";
-import validIcon from "../media/Icon_Valid.svg";
+import { ContactUsForm } from "../components/ContactUsForm";
 import companyIcon from "../media/Img_Contact.png";
 
 
@@ -15,7 +14,8 @@ export function ContactUs() {
     <div>
       <h1>Contact Us</h1>
       <p>{formData["fullName"]}</p>
-      <form onSubmit={handleSubmit}>
+      <ContactUsForm />
+      {/* <form onSubmit={handleSubmit}>
         <label name="fullName">Full Name</label>
         <input name="fullname" type="text"/>
         <label name="email">Email address</label>
@@ -27,7 +27,7 @@ export function ContactUs() {
         <label name="fullName">Full Name</label>
         <input name="fullname" type="text"/>
         <button type="submit">Submit</button>
-      </form>
+      </form> */}
     </div>
   )
 }
