@@ -14,7 +14,7 @@ export function FormField(props) {
         label="Full Name"
         type={props.type}
         value={props.value}
-        onChange={props.onChange}
+        onChange={(event) => props.onChange(props.name, event.target.value)}
       />
     </div>
   )

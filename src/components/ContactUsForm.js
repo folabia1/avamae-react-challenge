@@ -21,8 +21,14 @@ export function ContactUsForm() {
     }
   })
 
-  function handleChange(event) {
+  function handleChange(field, value) {
     // manage change in state
+    setState((prevState) => {
+      return {
+        ...prevState,
+        [field]: value,
+      }
+    })
   }
 
   function handleSubmit(event) {
@@ -31,7 +37,7 @@ export function ContactUsForm() {
   }
 
   return (
-    <form className="ContactUsForm" onSubmit={handleSubmit}>
+    <form className="ContactUsForm" onSubmit={handleSubmit} autoComplete="off">
       <div className="nameAndEmail">
         <FormField name="fullName" type="text" value={state["fullName"]} onChange={handleChange} />
         <FormField name="emailAddress" type="text" value={state["emailAddress"]} onChange={handleChange} />
@@ -40,8 +46,8 @@ export function ContactUsForm() {
       <FormField name="message" type="textarea" value={state["message"]}
         subText="Maximum text length is 500 characters" onChange={handleChange} />
       <AddressDetailsField value={state["addressDetails"]} onChange={handleChange} />
-      <button type="submit">
-        <img src={submitIcon}/>
+      <button className="submitButton" type="submit">
+        <img className="submitIcon" src={submitIcon}/>
         Submit
       </button>
     </form>
