@@ -1,17 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import { ContactUsForm } from "../components/ContactUsForm";
-import companyIcon from "../media/Img_Contact.png";
-
 
 export function ContactUs() {
   return (
     <div className="ContactUs">
-      <div>
+      <div className="left">
         <h1>Contact Us</h1>
+        <strong>
+          <p>
+            Populo facilisi nam no, dolor deleniti deseruisse ne cum, nam quodsi
+            aliquam eligendi ne. Ferri euismod accusata te nec, summo accumsan
+            at vix.
+          </p>
+        </strong>
         <ContactUsForm />
       </div>
-      <img src={companyIcon} className="imgContact" /> 
-    
+      <div className="right" />
+      {/* <img src={companyIcon} className="company-icon" alt=""/> */}
     </div>
-  )
+  );
 }
