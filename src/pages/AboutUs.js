@@ -17,8 +17,8 @@ export function AboutUs() {
         congue. Nulla pretuim elit non facilisis imperdiet. Curabitur auctor
         lacus turpis, quis fringilla quam faucibus sed. Sed consequat magna
         enim, eu efficitur purus viverra sit amet.{" "}
-        <a href="#">Praesent varius porta blandit</a> mollis, felis ut convallis
-        convallis.
+        <span className="blue-underline">Praesent varius porta blandit</span>{" "}
+        mollis, felis ut convallis convallis.
       </p>
       <LoremIpsum startWithLoremIpsum={false} />
       <img src={roomImage2} alt="" />

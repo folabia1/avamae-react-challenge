@@ -83,6 +83,9 @@ button {
   font-size: 11px;
   font-weight: 600;
 }
+button:hover {
+  cursor: pointer;
+}
 
 .login-button {
   background-color: #eef7ff;
@@ -112,7 +115,6 @@ footer a {
 .hero-section {
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
 }
 
 .HeroSwiper {
@@ -146,25 +148,35 @@ footer a {
   left: 0 !important;
 }
 
-.slide-1 {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) 12%, rgba(0, 0, 0, 0) 50%), url("../media/shutterstock_407632243.jpg");
-}
-
-.slide-2 {
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) 9%, rgba(0, 0, 0, 0) 50%), url("../media/shutterstock_696636346.jpg");
+.swiper-slide {
+  height: auto !important;
 }
 
 .slide {
   display: block;
-  padding: 10vw 0;
+  padding: 9vw 0;
+  margin: 0;
   background-repeat: no-repeat;
-  background-size: 105%;
-  background-position: top 28% left;
+  background-size: 100%;
+  background-position: top 10% left;
 }
 
 .slide-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: white;
   padding: 0 15%;
+  width: 35%;
+}
+.slide-contents h1,
+.slide-contents p,
+.slide-contents button {
+  line-height: normal;
+  margin: 15px 0px;
+}
+.slide-contents p {
+  font-size: medium;
 }
 
 .section-2 {
@@ -225,6 +237,13 @@ footer a {
 .AboutUs ul {
   padding: 0 15px;
 }
+.AboutUs .blue-underline {
+  color: blue;
+  text-decoration: underline;
+}
+.AboutUs .blue-underline:hover {
+  cursor: pointer;
+}
 
 .ContactUs {
   display: grid;
@@ -233,7 +252,7 @@ footer a {
   column-gap: 4vw;
 }
 .ContactUs .left {
-  padding: 40px 0;
+  padding: 40px 0 60px 0;
 }
 .ContactUs .right {
   background-image: url("../media/Img_Contact.png");
@@ -359,7 +378,7 @@ footer a {
   align-items: center;
   background-color: #347ab7;
   padding: 10px;
-  margin: 0 0 50px 0;
+  margin: 0;
   border-style: none;
   border-radius: 5px;
   color: white;

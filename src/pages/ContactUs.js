@@ -16,7 +16,6 @@ export function ContactUs() {
         <ContactUsForm />
       </div>
       <div className="right" />
-      {/* <img src={companyIcon} className="company-icon" alt=""/> */}
     </div>
   );
 }

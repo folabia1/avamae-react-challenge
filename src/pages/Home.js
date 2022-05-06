@@ -1,10 +1,13 @@
 import React from "react";
 import { HeroSwiper } from "../components/HeroSwiper";
 import { LoremIpsum } from "react-lorem-ipsum";
+import { useNavigate } from "react-router-dom";
 
 import roomImage2 from "../media/shutterstock_696636415.jpg";
 
 export function Home() {
+  const navigate = useNavigate();
+
   return (
     <div className="Home">
       <div className="hero-section">
@@ -28,7 +31,12 @@ export function Home() {
               </li>
             </ul>
           </strong>
-          <button className="learn-more-button">Learn more</button>
+          <button
+            onClick={() => navigate("/about-us")}
+            className="learn-more-button"
+          >
+            Learn more
+          </button>
         </div>
         <img src={roomImage2} alt="office-room" />
       </div>
@@ -50,7 +58,14 @@ export function Home() {
           </strong>
           <LoremIpsum p={2} startWithLoremIpsum={false} />
         </div>
-        <button className="contact-us-button">Contact Us</button>
+        <button
+          onClick={() => {
+            navigate("/contact-us");
+          }}
+          className="contact-us-button"
+        >
+          Contact Us
+        </button>
       </div>
     </div>
   );

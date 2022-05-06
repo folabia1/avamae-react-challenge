@@ -90,6 +90,9 @@ button {
   color: white;
   font-size: 11px;
   font-weight: 600;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .login-button {
@@ -122,7 +125,7 @@ footer {
 .hero-section {
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
+  // background-color: lightgray;
 }
 
 .HeroSwiper {
@@ -153,38 +156,37 @@ footer {
 .swiper-button-prev {
   left: 0 !important;
 }
-
-.slide-1 {
-  background: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.8) 12%,
-      rgba(0, 0, 0, 0) 50%
-    ),
-    url("../media/shutterstock_407632243.jpg");
-}
-
-.slide-2 {
-  background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.8) 9%,
-      rgba(0, 0, 0, 0) 50%
-    ),
-    url("../media/shutterstock_696636346.jpg");
+.swiper-slide {
+  height: auto !important;
 }
 
 .slide {
   display: block;
-  padding: 10vw 0;
+  padding: 9vw 0;
+  margin: 0;
   background-repeat: no-repeat;
-  background-size: 105%;
-  background-position: top 28% left;
+  background-size: 100%;
+  background-position: top 10% left;
 }
 
 .slide-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   color: white;
   padding: 0 $standard-margin;
+  width: 35%;
+
+  h1,
+  p,
+  button {
+    line-height: normal;
+    margin: 15px 0px;
+  }
+
+  p {
+    font-size: medium;
+  }
 }
 
 .section-2 {
@@ -254,6 +256,15 @@ footer {
   ul {
     padding: 0 15px;
   }
+
+  .blue-underline {
+    color: blue;
+    text-decoration: underline;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 // CONTACT US PAGE
@@ -265,7 +276,7 @@ footer {
   column-gap: 4vw;
 
   .left {
-    padding: 40px 0;
+    padding: 40px 0 60px 0;
   }
 
   .right {
@@ -408,7 +419,7 @@ footer {
   align-items: center;
   background-color: #347ab7;
   padding: 10px;
-  margin: 0 0 50px 0;
+  margin: 0;
   border-style: none;
   border-radius: 5px;
   color: white;
