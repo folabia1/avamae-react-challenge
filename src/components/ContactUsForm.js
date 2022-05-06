@@ -3,7 +3,7 @@ import { FormField } from "./FormField";
 import { PhoneNumberField } from "./PhoneNumberField";
 import { AddressDetailsField } from "./AddressDetailsField";
 import submitIcon from "../media/Icon_Submit.svg";
-// import validIcon from "../media/Icon_Valid.svg";
+import validIcon from "../media/Icon_Valid.svg";
 
 export const FieldRefsContext = createContext(); // used in FormField.js to validate data
 
@@ -132,7 +132,7 @@ export function ContactUsForm() {
     }
   }
 
-  return (
+  return submissionStatus !== "recieved" ? (
     <FieldRefsContext.Provider value={{ fieldRefs, setFieldRefs }}>
       <form
         className="ContactUsForm"
@@ -186,5 +186,11 @@ export function ContactUsForm() {
         <p>Submission Recieved. Thank you.</p>
       )}
     </FieldRefsContext.Provider>
+  ) : (
+    <div className="message-sent">
+      <img src={validIcon} className="valid-icon" />
+      <h2>Your message has been sent</h2>
+      <p>We will be in contact with you within 24 hours.</p>
+    </div>
   );
 }

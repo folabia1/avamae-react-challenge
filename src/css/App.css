@@ -3,18 +3,22 @@
   color: black;
 }
 
+.small-screen {
+  font-size: 12px;
+}
+
 h1 {
-  font-size: xx-large;
+  font-size: 2.2em;
   font-weight: 300;
 }
 
 h2 {
-  font-size: large;
+  font-size: 1.4em;
   font-weight: 200;
 }
 
 h3 {
-  font-size: medium;
+  font-size: 1em;
   font-weight: 400;
   padding: 0 0 20px 0;
 }
@@ -22,8 +26,21 @@ h3 {
 p,
 ul,
 label {
-  font-size: 11px;
+  font-size: 0.68em;
   line-height: 170%;
+}
+
+.medium-screen p,
+.medium-screen ul,
+.medium-screen label,
+.small-screen p,
+.small-screen ul,
+.small-screen label {
+  font-size: 0.95em;
+}
+
+.medium-screen label {
+  font-size: 0.7em;
 }
 
 ul {
@@ -65,6 +82,15 @@ header .navLink {
 header .login-button {
   margin: 0 0 0 15px;
   width: 100px;
+}
+
+.medium-screen header,
+.small-screen header {
+  justify-content: center;
+}
+.medium-screen .navLinks,
+.small-screen .navLinks {
+  display: none;
 }
 
 #logo {
@@ -152,6 +178,11 @@ footer a {
   height: auto !important;
 }
 
+.small-screen .swiper-button-next,
+.small-screen .swiper-button-prev {
+  display: none;
+}
+
 .slide {
   display: block;
   padding: 9vw 0;
@@ -159,6 +190,16 @@ footer a {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: top 10% left;
+}
+
+.small-screen .slide {
+  padding: 40vw 0 20vw 0;
+  background-size: 220%;
+  background-position: top 10% center;
+}
+
+.medium-screen .slide {
+  padding: 50px 0 10px 0;
 }
 
 .slide-contents {
@@ -176,7 +217,22 @@ footer a {
   margin: 15px 0px;
 }
 .slide-contents p {
-  font-size: medium;
+  font-size: 1em;
+}
+
+.small-screen .slide-contents {
+  width: 80%;
+  padding: 0 7%;
+}
+.small-screen .slide-contents h1,
+.small-screen .slide-contents p,
+.small-screen .slide-contents button {
+  line-height: normal;
+  margin: 5px 0px;
+}
+.small-screen .slide-contents button {
+  display: inline-block;
+  width: auto;
 }
 
 .section-2 {
@@ -190,19 +246,59 @@ footer a {
   width: 100%;
 }
 
+.medium-screen .section-2,
+.small-screen .section-2 {
+  padding: 30px 7%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.medium-screen .section-2 button,
+.small-screen .section-2 button {
+  display: inline-block;
+  width: 100%;
+}
+
 .section-3 {
   padding: 50px 15%;
   background-image: url("../media/shutterstock_1302552622.jpg");
   background-repeat: no-repeat;
   background-position: top 10% center;
   background-size: 110%;
+  display: flex;
 }
 .section-3 .text-box {
   width: 45%;
   padding: 25px;
+  margin: 10px 0;
   background-color: rgba(0, 0, 0, 0.4);
   color: white;
   border-radius: 6px;
+}
+
+.medium-screen .section-3,
+.small-screen .section-3 {
+  padding: 30px 7%;
+  background-size: 150%;
+}
+.medium-screen .section-3 .text-box,
+.small-screen .section-3 .text-box {
+  width: 60%;
+}
+
+.small-screen .section-3 {
+  height: 120vw;
+  background-size: 210%;
+}
+.small-screen .section-3 .text-box {
+  display: block;
+  margin: 0 auto 0 auto;
+  height: 80%;
+  width: 86%;
+}
+.small-screen .section-3 .text-box button {
+  display: block;
+  margin: 20px 0;
+  width: 100%;
 }
 
 .section-4 {
@@ -215,6 +311,11 @@ footer a {
 .section-4 .paragraphs {
   margin: 0 0 20px 0;
   column-count: 3;
+}
+
+.medium-screen .section-4 .paragraphs,
+.small-screen .section-4 .paragraphs {
+  column-count: 1;
 }
 
 .AboutUs {
@@ -246,6 +347,13 @@ footer a {
   cursor: pointer;
 }
 
+.small-screen .AboutUs {
+  margin: 0 7%;
+}
+.small-screen .AboutUs img {
+  width: 75vw;
+}
+
 .ContactUs {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -267,6 +375,16 @@ footer a {
   padding: 0 0 15px 0;
 }
 
+.medium-screen .ContactUs,
+.small-screen .ContactUs {
+  display: flex;
+  flex-direction: column;
+}
+.medium-screen .right,
+.small-screen .right {
+  display: none;
+}
+
 .ContactUsForm {
   display: flex;
   flex-direction: column;
@@ -286,6 +404,22 @@ footer a {
 }
 .ContactUsForm .address-details .FormField:nth-child(2) {
   grid-column: 3/-1;
+}
+
+.small-screen .ContactUsForm .name-and-email {
+  display: flex;
+  flex-direction: column;
+}
+.small-screen .ContactUsForm .address-details {
+  display: grid;
+  column-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.small-screen .ContactUsForm .address-details .FormField:nth-child(1) {
+  grid-column: 1/3;
+}
+.small-screen .ContactUsForm .address-details .FormField:nth-child(2) {
+  grid-column: 1/3;
 }
 
 .FormField {
@@ -388,6 +522,31 @@ footer a {
 
 .submit-icon {
   height: 10px;
+}
+
+.message-sent {
+  background-color: #e8f4d9;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  font-size: 0.9em;
+}
+.message-sent .valid-icon {
+  background-color: #8dc63f;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  padding: 10px;
+}
+.message-sent h2,
+.message-sent p {
+  margin: 3px;
+}
+.message-sent h2 {
+  padding: 8px 0 0 0;
 }
 
 /*# sourceMappingURL=App.css.map */

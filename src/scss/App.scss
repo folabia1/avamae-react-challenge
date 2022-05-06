@@ -1,4 +1,5 @@
 $standard-margin: 15%;
+$small-margin: 7%;
 $company-blue: #347ab7;
 $company-light-blue: #eef7ff;
 $company-dark-blue: #4384bc;
@@ -8,18 +9,22 @@ $company-dark-blue: #4384bc;
   color: black;
 }
 
+.small-screen {
+  font-size: 12px;
+}
+
 h1 {
-  font-size: xx-large;
+  font-size: 2.2em;
   font-weight: 300;
 }
 
 h2 {
-  font-size: large;
+  font-size: 1.4em;
   font-weight: 200;
 }
 
 h3 {
-  font-size: medium;
+  font-size: 1em;
   font-weight: 400;
   padding: 0 0 20px 0;
 }
@@ -27,8 +32,23 @@ h3 {
 p,
 ul,
 label {
-  font-size: 11px;
+  font-size: 0.68em;
   line-height: 170%;
+}
+
+.medium-screen,
+.small-screen {
+  p,
+  ul,
+  label {
+    font-size: 0.95em;
+  }
+}
+
+.medium-screen {
+  label {
+    font-size: 0.7em;
+  }
 }
 
 ul {
@@ -72,6 +92,16 @@ header {
   .login-button {
     margin: 0 0 0 15px;
     width: 100px;
+  }
+}
+
+.medium-screen,
+.small-screen {
+  header {
+    justify-content: center;
+  }
+  .navLinks {
+    display: none;
   }
 }
 
@@ -160,6 +190,13 @@ footer {
   height: auto !important;
 }
 
+.small-screen {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+}
+
 .slide {
   display: block;
   padding: 9vw 0;
@@ -167,6 +204,18 @@ footer {
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: top 10% left;
+}
+.small-screen {
+  .slide {
+    padding: 40vw 0 20vw 0;
+    background-size: 220%;
+    background-position: top 10% center;
+  }
+}
+.medium-screen {
+  .slide {
+    padding: 50px 0 10px 0;
+  }
 }
 
 .slide-contents {
@@ -185,7 +234,25 @@ footer {
   }
 
   p {
-    font-size: medium;
+    font-size: 1em;
+  }
+}
+
+.small-screen {
+  .slide-contents {
+    width: 80%;
+    padding: 0 $small-margin;
+
+    h1,
+    p,
+    button {
+      line-height: normal;
+      margin: 5px 0px;
+    }
+    button {
+      display: inline-block;
+      width: auto;
+    }
   }
 }
 
@@ -201,19 +268,65 @@ footer {
   }
 }
 
+.medium-screen,
+.small-screen {
+  .section-2 {
+    padding: 30px $small-margin;
+    display: flex;
+    flex-direction: column-reverse;
+
+    button {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+
 .section-3 {
   padding: 50px $standard-margin;
   background-image: url("../media/shutterstock_1302552622.jpg");
   background-repeat: no-repeat;
   background-position: top 10% center;
   background-size: 110%;
+  display: flex;
 
   .text-box {
     width: 45%;
     padding: 25px;
+    margin: 10px 0;
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
     border-radius: 6px;
+  }
+}
+
+.medium-screen,
+.small-screen {
+  .section-3 {
+    padding: 30px $small-margin;
+    background-size: 150%;
+    .text-box {
+      width: 60%;
+    }
+  }
+}
+
+.small-screen {
+  .section-3 {
+    height: 120vw;
+    background-size: 210%;
+    .text-box {
+      display: block;
+      margin: 0 auto 0 auto;
+      height: 80%;
+      width: calc(100% - 2 * $small-margin);
+
+      button {
+        display: block;
+        margin: 20px 0;
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -228,6 +341,15 @@ footer {
   .paragraphs {
     margin: 0 0 20px 0;
     column-count: 3;
+  }
+}
+
+.medium-screen,
+.small-screen {
+  .section-4 {
+    .paragraphs {
+      column-count: 1;
+    }
   }
 }
 
@@ -268,6 +390,16 @@ footer {
   }
 }
 
+.small-screen {
+  .AboutUs {
+    margin: 0 $small-margin;
+
+    img {
+      width: 75vw;
+    }
+  }
+}
+
 // CONTACT US PAGE
 
 .ContactUs {
@@ -294,6 +426,19 @@ footer {
   }
 }
 
+.medium-screen,
+.small-screen {
+  .ContactUs {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+  }
+  .right {
+    display: none;
+  }
+}
+
 .ContactUsForm {
   display: flex;
   flex-direction: column;
@@ -314,6 +459,29 @@ footer {
     }
     .FormField:nth-child(2) {
       grid-column: 3 / -1;
+    }
+  }
+}
+
+.small-screen {
+  .ContactUsForm {
+    .name-and-email {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .address-details {
+      display: grid;
+      column-gap: 20px;
+      grid-template-columns: repeat(2, 1fr);
+
+      .FormField:nth-child(1) {
+        grid-column: 1 / 3;
+      }
+
+      .FormField:nth-child(2) {
+        grid-column: 1 / 3;
+      }
     }
   }
 }
@@ -429,6 +597,34 @@ footer {
 
 .submit-icon {
   height: 10px;
+}
+
+.message-sent {
+  background-color: #e8f4d9;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+  font-size: 0.9em;
+
+  .valid-icon {
+    background-color: #8dc63f;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding: 10px;
+  }
+
+  h2,
+  p {
+    margin: 3px;
+  }
+
+  h2 {
+    padding: 8px 0 0 0;
+  }
 }
 
 // .company-icon {
