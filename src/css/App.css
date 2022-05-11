@@ -3,10 +3,15 @@
   color: black;
 }
 
-.small-screen {
-  font-size: 12px;
+html {
+  font-size: 16px;
 }
 
+@media (max-width: 900px) {
+  .App {
+    font-size: 12px;
+  }
+}
 h1 {
   font-size: 2.2em;
   font-weight: 300;
@@ -30,19 +35,13 @@ label {
   line-height: 170%;
 }
 
-.medium-screen p,
-.medium-screen ul,
-.medium-screen label,
-.small-screen p,
-.small-screen ul,
-.small-screen label {
-  font-size: 0.95em;
+@media (max-width: 900px) {
+  p,
+ul,
+label {
+    font-size: 0.95em;
+  }
 }
-
-.medium-screen label {
-  font-size: 0.7em;
-}
-
 ul {
   padding: 15px;
 }
@@ -84,15 +83,14 @@ header .login-button {
   width: 100px;
 }
 
-.medium-screen header,
-.small-screen header {
-  justify-content: center;
+@media (max-width: 900px) {
+  header {
+    justify-content: center;
+  }
+  header .navLinks {
+    display: none;
+  }
 }
-.medium-screen .navLinks,
-.small-screen .navLinks {
-  display: none;
-}
-
 #logo {
   width: 170px;
   height: auto;
@@ -178,11 +176,12 @@ footer a {
   height: auto !important;
 }
 
-.small-screen .swiper-button-next,
-.small-screen .swiper-button-prev {
-  display: none;
+@media (max-width: 900px) {
+  .swiper-button-next,
+.swiper-button-prev {
+    display: none;
+  }
 }
-
 .slide {
   display: block;
   padding: 9vw 0;
@@ -192,16 +191,18 @@ footer a {
   background-position: top 10% left;
 }
 
-.small-screen .slide {
-  padding: 40vw 0 20vw 0;
-  background-size: 220%;
-  background-position: top 10% center;
+@media (max-width: 900px) {
+  .slide {
+    padding: 40vw 0 20vw 0;
+    background-size: 220%;
+    background-position: top 10% center;
+  }
 }
-
-.medium-screen .slide {
-  padding: 50px 0 10px 0;
+@media (max-width: 900px) and (min-width: 600px) {
+  .slide {
+    padding: 50px 0 10px 0;
+  }
 }
-
 .slide-contents {
   display: flex;
   flex-direction: column;
@@ -220,21 +221,23 @@ footer a {
   font-size: 1em;
 }
 
-.small-screen .slide-contents {
-  width: 80%;
-  padding: 0 7%;
+@media (max-width: 600px) {
+  .slide-contents {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+  .slide-contents h1,
+.slide-contents p,
+.slide-contents button {
+    line-height: normal;
+    margin: 5px 0px;
+  }
+  .slide-contents button {
+    display: inline-block;
+    width: auto;
+  }
 }
-.small-screen .slide-contents h1,
-.small-screen .slide-contents p,
-.small-screen .slide-contents button {
-  line-height: normal;
-  margin: 5px 0px;
-}
-.small-screen .slide-contents button {
-  display: inline-block;
-  width: auto;
-}
-
 .section-2 {
   padding: 50px 15%;
   display: grid;
@@ -246,18 +249,17 @@ footer a {
   width: 100%;
 }
 
-.medium-screen .section-2,
-.small-screen .section-2 {
-  padding: 30px 7%;
-  display: flex;
-  flex-direction: column-reverse;
+@media (max-width: 900px) {
+  .section-2 {
+    padding: 30px 7%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .section-2 button {
+    display: inline-block;
+    width: 100%;
+  }
 }
-.medium-screen .section-2 button,
-.small-screen .section-2 button {
-  display: inline-block;
-  width: 100%;
-}
-
 .section-3 {
   padding: 50px 15%;
   background-image: url("../media/shutterstock_1302552622.jpg");
@@ -275,32 +277,33 @@ footer a {
   border-radius: 6px;
 }
 
-.medium-screen .section-3,
-.small-screen .section-3 {
-  padding: 30px 7%;
-  background-size: 150%;
+@media (max-width: 900px) {
+  .section-3 {
+    padding: 30px 7%;
+    background-size: 150%;
+  }
+  .section-3 .text-box {
+    width: 60%;
+  }
 }
-.medium-screen .section-3 .text-box,
-.small-screen .section-3 .text-box {
-  width: 60%;
+@media (max-width: 600px) {
+  .section-3 {
+    height: auto;
+    background-size: auto;
+    background-position: top 10% right 42%;
+  }
+  .section-3 .text-box {
+    display: block;
+    margin: 0 auto 0 auto;
+    height: 80%;
+    width: 86%;
+  }
+  .section-3 .text-box button {
+    display: block;
+    margin: 20px 0;
+    width: 100%;
+  }
 }
-
-.small-screen .section-3 {
-  height: 120vw;
-  background-size: 210%;
-}
-.small-screen .section-3 .text-box {
-  display: block;
-  margin: 0 auto 0 auto;
-  height: 80%;
-  width: 86%;
-}
-.small-screen .section-3 .text-box button {
-  display: block;
-  margin: 20px 0;
-  width: 100%;
-}
-
 .section-4 {
   padding: 50px 15%;
   text-align: center;
@@ -313,11 +316,11 @@ footer a {
   column-count: 3;
 }
 
-.medium-screen .section-4 .paragraphs,
-.small-screen .section-4 .paragraphs {
-  column-count: 1;
+@media (max-width: 900px) {
+  .section-4 .paragraphs {
+    column-count: 1;
+  }
 }
-
 .AboutUs {
   margin: 0 15%;
   padding: 40px 0;
@@ -347,13 +350,14 @@ footer a {
   cursor: pointer;
 }
 
-.small-screen .AboutUs {
-  margin: 0 7%;
+@media (max-width: 600px) {
+  .AboutUs {
+    margin: 0 7%;
+  }
+  .AboutUs img {
+    width: 75vw;
+  }
 }
-.small-screen .AboutUs img {
-  width: 75vw;
-}
-
 .ContactUs {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -375,16 +379,16 @@ footer a {
   padding: 0 0 15px 0;
 }
 
-.medium-screen .ContactUs,
-.small-screen .ContactUs {
-  display: flex;
-  flex-direction: column;
-}
-.medium-screen .right,
-.small-screen .right {
-  display: none;
-}
+@media (max-width: 900px) {
+  .ContactUs {
+    display: flex;
+    flex-direction: column;
+  }
 
+  .right {
+    display: none;
+  }
+}
 .ContactUsForm {
   display: flex;
   flex-direction: column;
@@ -397,6 +401,7 @@ footer a {
 .ContactUsForm .address-details {
   display: grid;
   column-gap: 20px;
+  align-items: flex-end;
   grid-template-columns: repeat(4, 1fr);
 }
 .ContactUsForm .address-details .FormField:nth-child(1) {
@@ -406,22 +411,23 @@ footer a {
   grid-column: 3/-1;
 }
 
-.small-screen .ContactUsForm .name-and-email {
-  display: flex;
-  flex-direction: column;
+@media (max-width: 600px) {
+  .ContactUsForm .name-and-email {
+    display: flex;
+    flex-direction: column;
+  }
+  .ContactUsForm .address-details {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ContactUsForm .address-details .FormField:nth-child(1) {
+    grid-column: 1/3;
+  }
+  .ContactUsForm .address-details .FormField:nth-child(2) {
+    grid-column: 1/3;
+  }
 }
-.small-screen .ContactUsForm .address-details {
-  display: grid;
-  column-gap: 20px;
-  grid-template-columns: repeat(2, 1fr);
-}
-.small-screen .ContactUsForm .address-details .FormField:nth-child(1) {
-  grid-column: 1/3;
-}
-.small-screen .ContactUsForm .address-details .FormField:nth-child(2) {
-  grid-column: 1/3;
-}
-
 .FormField {
   display: flex;
   flex-direction: column;
@@ -438,6 +444,7 @@ footer a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 10px;
   align-items: center;
 }
 .FormField div p {

@@ -1,5 +1,7 @@
 $standard-margin: 15%;
 $small-margin: 7%;
+$small-screen-max-width: 600px;
+$medium-screen-max-width: 900px;
 $company-blue: #347ab7;
 $company-light-blue: #eef7ff;
 $company-dark-blue: #4384bc;
@@ -9,8 +11,14 @@ $company-dark-blue: #4384bc;
   color: black;
 }
 
-.small-screen {
-  font-size: 12px;
+html {
+  font-size: 16px;
+}
+
+@media (max-width: $medium-screen-max-width) {
+  .App {
+    font-size: 12px;
+  }
 }
 
 h1 {
@@ -36,8 +44,7 @@ label {
   line-height: 170%;
 }
 
-.medium-screen,
-.small-screen {
+@media (max-width: $medium-screen-max-width) {
   p,
   ul,
   label {
@@ -45,11 +52,11 @@ label {
   }
 }
 
-.medium-screen {
-  label {
-    font-size: 0.7em;
-  }
-}
+// @media (max-width: $medium-screen-max-width) and (min-width: $small-screen-max-width) {
+//   label {
+//     font-size: 0.7em;
+//   }
+// }
 
 ul {
   padding: 15px;
@@ -95,13 +102,12 @@ header {
   }
 }
 
-.medium-screen,
-.small-screen {
+@media (max-width: $medium-screen-max-width) {
   header {
     justify-content: center;
-  }
-  .navLinks {
-    display: none;
+    .navLinks {
+      display: none;
+    }
   }
 }
 
@@ -190,7 +196,7 @@ footer {
   height: auto !important;
 }
 
-.small-screen {
+@media (max-width: $medium-screen-max-width) {
   .swiper-button-next,
   .swiper-button-prev {
     display: none;
@@ -205,14 +211,14 @@ footer {
   background-size: 100%;
   background-position: top 10% left;
 }
-.small-screen {
+@media (max-width: $medium-screen-max-width) {
   .slide {
     padding: 40vw 0 20vw 0;
     background-size: 220%;
     background-position: top 10% center;
   }
 }
-.medium-screen {
+@media (max-width: $medium-screen-max-width) and (min-width: $small-screen-max-width) {
   .slide {
     padding: 50px 0 10px 0;
   }
@@ -238,10 +244,11 @@ footer {
   }
 }
 
-.small-screen {
+@media (max-width: $small-screen-max-width) {
   .slide-contents {
     width: 80%;
-    padding: 0 $small-margin;
+    margin: 0 auto;
+    padding: 0;
 
     h1,
     p,
@@ -268,8 +275,7 @@ footer {
   }
 }
 
-.medium-screen,
-.small-screen {
+@media (max-width: $medium-screen-max-width) {
   .section-2 {
     padding: 30px $small-margin;
     display: flex;
@@ -300,8 +306,7 @@ footer {
   }
 }
 
-.medium-screen,
-.small-screen {
+@media (max-width: $medium-screen-max-width) {
   .section-3 {
     padding: 30px $small-margin;
     background-size: 150%;
@@ -311,10 +316,11 @@ footer {
   }
 }
 
-.small-screen {
+@media (max-width: $small-screen-max-width) {
   .section-3 {
-    height: 120vw;
-    background-size: 210%;
+    height: auto;
+    background-size: auto;
+    background-position: top 10% right 42%;
     .text-box {
       display: block;
       margin: 0 auto 0 auto;
@@ -344,8 +350,7 @@ footer {
   }
 }
 
-.medium-screen,
-.small-screen {
+@media (max-width: $medium-screen-max-width) {
   .section-4 {
     .paragraphs {
       column-count: 1;
@@ -390,7 +395,7 @@ footer {
   }
 }
 
-.small-screen {
+@media (max-width: $small-screen-max-width) {
   .AboutUs {
     margin: 0 $small-margin;
 
@@ -426,8 +431,7 @@ footer {
   }
 }
 
-.medium-screen,
-.small-screen {
+@media (max-width: $medium-screen-max-width) {
   .ContactUs {
     display: flex;
     flex-direction: column;
@@ -452,6 +456,7 @@ footer {
   .address-details {
     display: grid;
     column-gap: 20px;
+    align-items: flex-end;
     grid-template-columns: repeat(4, 1fr);
 
     .FormField:nth-child(1) {
@@ -463,7 +468,7 @@ footer {
   }
 }
 
-.small-screen {
+@media (max-width: $small-screen-max-width) {
   .ContactUsForm {
     .name-and-email {
       display: flex;
@@ -504,6 +509,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    gap: 10px;
     align-items: center;
 
     p {
